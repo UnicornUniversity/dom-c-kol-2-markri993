@@ -1,7 +1,7 @@
 /**
  * Převod čísla z desítkové soustavy do dvojkové.
- * @param {string} inputNumber - číslo k převodu
- * @returns {string} binární podoba vstupního čísla
+ * @param {string} inputNumber - požadované číslo k převodu
+ * @returns {string} dvojková podoba vstupního čísla
  */
 export function main(inputNumber, inputNumberSystem, outputNumberSystem) {
 
@@ -15,24 +15,11 @@ export function main(inputNumber, inputNumberSystem, outputNumberSystem) {
     return "0";
   }
 
-  // převod 10 → 2 (původní algoritmus z DÚ1)
+  // převod z desítkové do dvojkové soustavy (původní algoritmus z Domácího úkolu 1)
   while (currentValue > 0) {
     if (currentValue % 2 === 1) {
       binary = "1" + binary;
     } else {
       binary = "0" + binary;
-    }
-    currentValue = Math.floor(currentValue / 2);
-  }
 
-  return binary;
-}
-
-export function permittedInputSystems() {
-  return [10];
-}
-
-export function permittedOutputSystems() {
-  return [2];
-}
 
