@@ -1,35 +1,38 @@
-//TODO add imports if needed
-//import { exMain } from "./exclude/exampleAss2.js"
-//TODO add/change doc as needed
 /**
- * TODO - Write functional code for this application. You can call any other function, but usage of ".toString(numberSystem)" and "Number.parseInt(number, numberSystem)" is forbidden (only permitted when used on individual digits).
- * The main function which calls the application. 
- * TODO - Please, add specific description here for the application purpose.
- * @param {string} inputNumber number that is being converted
- * @param {number} inputNumberSystem numerical system that the inputNumber is being converted from
- * @param {number} outputNumberSystem numerical system that the inputNumber is being converted into
- * @returns {string} containing number converted to output system
+ * Převod čísla z desítkové soustavy do dvojkové.
+ * @param {string} inputNumber - číslo k převodu
+ * @returns {string} binární podoba vstupního čísla
  */
 export function main(inputNumber, inputNumberSystem, outputNumberSystem) {
-  //TODO code
-  //let dtoOut = exMain(inputNumber, inputNumberSystem, outputNumberSystem);
-  return dtoOut;
+
+  // převedeme vstupní text na číslo
+  let decimal = Number(inputNumber);
+  let currentValue = decimal;
+  let binary = "";
+
+  // zvláštní případ: 0
+  if (currentValue === 0) {
+    return "0";
+  }
+
+  // převod 10 → 2 (původní algoritmus z DÚ1)
+  while (currentValue > 0) {
+    if (currentValue % 2 === 1) {
+      binary = "1" + binary;
+    } else {
+      binary = "0" + binary;
+    }
+    currentValue = Math.floor(currentValue / 2);
+  }
+
+  return binary;
 }
 
-/**
- * TODO - Change this to contain all input number systems that your application can convert from.
- * Function which returns which number systems are permitted on input.
- * @returns {Array} array of numbers refering to permitted input systems
- */
 export function permittedInputSystems() {
-	return [10, 2];
+  return [10];
 }
 
-/**
- * TODO - Change this to contain all output number systems that your application can convert to.
- * Function which returns which number systems are permitted on output.
- * @returns {Array} array of numbers refering to permitted output systems
- */
 export function permittedOutputSystems() {
-	return [10, 2];
+  return [2];
 }
+
