@@ -1,5 +1,5 @@
 /**
- * Převod čísla z desítkové soustavy do dvojkové.
+ * Převod čísla z desítkové soustavy do dvojkové
  * @param {string} inputNumber - požadované číslo k převodu
  * @returns {string} dvojková podoba vstupního čísla
  */
