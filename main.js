@@ -21,5 +21,17 @@ export function main(inputNumber, inputNumberSystem, outputNumberSystem) {
       binary = "1" + binary;
     } else {
       binary = "0" + binary;
+    }
+    currentValue = Math.floor(currentValue / 2);
+  }
 
+  return binary;
+}
 
+export function permittedInputSystems() {
+  return [10];
+}
+
+export function permittedOutputSystems() {
+  return [2];
+}
