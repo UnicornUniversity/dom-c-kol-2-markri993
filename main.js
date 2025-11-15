@@ -10,7 +10,7 @@ export function main(inputNumber, inputNumberSystem, outputNumberSystem) {
   let currentValue = decimal;
   let binary = "";
 
-  // zvláštní případ: 0
+   // zvláštní případ: 0
   if (currentValue === 0) {
     return "0";
   }
